@@ -1,3 +1,7 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-sequences */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-param-reassign */
 import mongoose from 'mongoose';
 
 export function taskCreator(modelName = 'Task') {
