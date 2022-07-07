@@ -1,15 +1,14 @@
 /* eslint-disable consistent-return */
 /* eslint-disable new-cap */
-const passport = require('passport');
-const localStrategy = require('passport-local').Strategy;
-const JWTstrategy = require('passport-jwt').Strategy;
-const ExtractJWT = require('passport-jwt').ExtractJwt;
+import passport from 'passport';
+import { Strategy as LocalStrategy } from 'passport-local';
+import { ExtractJwt, Strategy as JwtStrategy } from 'passport-jwt';
 
 const user = { email: 'test@invyo.io', password: 'test123@' };
 
 passport.use(
     'login',
-    new localStrategy(
+    new LocalStrategy(
         {
             usernameField: 'email',
             passwordField: 'password',
@@ -37,10 +36,10 @@ passport.use(
 );
 
 passport.use(
-    new JWTstrategy(
+    new JwtStrategy(
         {
             secretOrKey: 'secretkey',
-            jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
         },
         async (token, done) => {
             try {

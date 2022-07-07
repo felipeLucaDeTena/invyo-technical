@@ -1,11 +1,11 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-unused-vars */
-const express = require('express');
+
+import express from 'express';
+import jwt from 'jsonwebtoken';
+import passport from 'passport';
 
 const router = express.Router();
-const jwt = require('jsonwebtoken');
-const passport = require('passport');
-// var auth = require("../controllers/auth.controller.js");
 
 router.route('/login').post(async (req, res, next) => {
     passport.authenticate('login', async (err, user, info) => {
@@ -27,4 +27,4 @@ router.route('/login').post(async (req, res, next) => {
     })(req, res, next);
 });
 
-module.exports = router;
+export default router;

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import * as crud from '../services/tasks-crud';
-import { taskCreator } from '../models/task.model';
+import * as crud from '../services/tasks-crud.js';
+import { taskCreator } from '../models/task.model.js';
 
 export const Task = taskCreator();
 

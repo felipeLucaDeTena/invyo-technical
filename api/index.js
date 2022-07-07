@@ -2,11 +2,11 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import passport from 'passport';
-import { mongoConnect } from './services/db';
-import tasksRouter from './routes/tasks.routes';
-import { taskCreator } from './models/task.model';
-import auth from './routes/auth.routes';
-import './auth/passport';
+import { mongoConnect } from './services/db.js';
+import tasksRouter from './routes/tasks.routes.js';
+import { taskCreator } from './models/task.model.js';
+import auth from './routes/auth.routes.js';
+import './auth/passport.js';
 
 export const app = express();
 const port = 3001;
