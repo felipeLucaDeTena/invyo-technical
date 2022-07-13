@@ -1,33 +1,53 @@
-### Invyo Technical Test
-
-## Table of contents
-
-- [General info](#general-info)
-- [Technologies](#technologies)
-- [Setup](#setup)
-
-## General info
-
-This project is simple Lorem ipsum dolor generator.
-
-## Technologies
-
-Project is created with:
-
-- Lorem version: 12.3
-- Ipsum version: 2.33
-- Ament library version: 999
+# Invyo Technical Test
 
 ## Setup
 
-To run this project, install it locally using npm:
+```bash
+# Clone this repository
+$ git clone https://github.com/felipeLucaDeTena/invyo-technical.git
 
-```
+# Go into the api repository
 $ cd ../api
+
+# Install dependencies
 $ npm install
+
+# Run the local server
 $ npm start
 
+
+# Go into the api repository
 $ cd ../app
+
+# Install dependencies
 $ npm install
+
+# Run the local server
 $ npm start
+
 ```
+
+## My process
+
+### App Built with
+
+- MongoDb
+- Mongoose
+- Express
+- Passport
+- JWT
+
+### App Built with
+
+- React
+- React Router
+- Redux and Redux Toolkit
+- Style Components
+- React Graph vis
+- React Select
+- Dayjs
+- Axios
+
+## Author
+
+- Github - [Felipe Khan Luca de Tena | felipeLucaDeTena](https://github.com/felipeLucaDeTena)
