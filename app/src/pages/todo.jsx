@@ -60,11 +60,10 @@ function ToDoPage() {
         {statuses.map((s) => (
           <Column key={s.status}>
             <Status>{s.status.toUpperCase()}</Status>
-            {cardState.tasks
-              .filter((c) => c.status === s.status)
-              .map((c) => (
-                <Card key={c.id} item={c} status={s} />
-              ))}
+            {cardState.tasks &&
+              cardState.tasks
+                .filter((c) => c.status === s.status)
+                .map((c) => <Card key={c.id} item={c} status={s} />)}
           </Column>
         ))}
       </Container>
