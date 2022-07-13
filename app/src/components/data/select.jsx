@@ -24,9 +24,17 @@ function FilterSelect({ data, setNewArr, newArr }) {
   const [selectedOptions, setSelectedOptions] = useState();
   const uniqueLanguageValues = [...new Set(data.map((item) => item.Language))];
   const uniqueTagValues = new Set();
-  for (const article of newArr) {
-    for (const tag of article.Tags.topic) {
-      uniqueTagValues.add(tag);
+  if (newArr) {
+    for (const article of newArr) {
+      for (const tag of article.Tags.topic) {
+        uniqueTagValues.add(tag);
+      }
+    }
+  } else {
+    for (const article of data) {
+      for (const tag of article.Tags.topic) {
+        uniqueTagValues.add(tag);
+      }
     }
   }
 
