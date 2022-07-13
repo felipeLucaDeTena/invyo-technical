@@ -25,6 +25,12 @@ $ npm install
 # Run the local server
 $ npm start
 
+
+# login data
+$ email: test@invyo.io
+$ password: test123@
+
+
 ```
 
 ## My process
