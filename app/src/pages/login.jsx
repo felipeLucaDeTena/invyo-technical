@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { HandleError } from "../components/login/login-error";
 import useAuth from "../context/auth-context";
 

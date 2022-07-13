@@ -1,8 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from "react";
 import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
-import Data from "../../data/data.json";
 import Search from "./search";
 import FilterSelect from "./select";
 

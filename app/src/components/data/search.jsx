@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
-import Data from "../../data/data.json";
 
 const SearchInput = styled.input`
   background-color: white;

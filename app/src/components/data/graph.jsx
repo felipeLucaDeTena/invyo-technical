@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import Graph from "react-graph-vis";
 import Data from "../../data/data.json";
 
