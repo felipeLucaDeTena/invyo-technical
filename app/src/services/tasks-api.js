@@ -12,13 +12,13 @@ export function get(id, token) {
     headers: { authorization: `Bearer ${token}` },
   });
 }
-export function set(user, token) {
-  return axios.post(TASKS_URL, user, {
+export function set(task, token) {
+  return axios.post(TASKS_URL, task, {
     headers: { authorization: `Bearer ${token}` },
   });
 }
-export function update(id, parcialUser, token) {
-  return axios.patch(TASKS_URL + id, parcialUser, {
+export function update(id, parcialTask, token) {
+  return axios.patch(TASKS_URL + id, parcialTask, {
     headers: { authorization: `Bearer ${token}` },
   });
 }

@@ -7,10 +7,10 @@ import mongoose from 'mongoose';
 export function taskCreator(modelName = 'Task') {
     const taskSchema = new mongoose.Schema({
         title: { type: String, required: true },
-        text: { type: String, required: true },
-        date: { type: String, required: true },
+        description: { type: String, required: true },
+        deadline: { type: String, required: true },
+        created_at: { type: String, required: true },
         status: { type: String, required: true },
-        tags: { type: [String], required: true },
     });
 
     taskSchema.set('toJSON', {

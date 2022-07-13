@@ -3,29 +3,38 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from "../../services/tasks-api";
 
 // First, create the thunk
-export const getTasks = createAsyncThunk("tasks/getTasks", async () => {
-  const response = await api.getAll();
+export const getTasks = createAsyncThunk("tasks/getTasks", async (token) => {
+  const response = await api.getAll(token);
   return response.data;
 });
-export const getTaskById = createAsyncThunk("tasks/getTaskById", async (id) => {
-  const response = await api.get(id);
-  return response.data;
-});
-export const setTask = createAsyncThunk("tasks/setTask", async (task) => {
-  const response = await api.set(task);
-  return response.data;
-});
-export const updateTask = createAsyncThunk(
-  "tasks/updateTask",
-  async (id, parcialTask) => {
-    const response = await api.update(id, parcialTask);
+export const getTaskById = createAsyncThunk(
+  "tasks/getTaskById",
+  async ({ id, token }) => {
+    const response = await api.get(id, token);
     return response.data;
   }
 );
-export const removeTask = createAsyncThunk("tasks/removeTask", async (id) => {
-  await api.remove(id);
-  return { id };
-});
+export const setTask = createAsyncThunk(
+  "tasks/setTask",
+  async ({ task, token }) => {
+    const response = await api.set(task, token);
+    return response.data;
+  }
+);
+export const updateTask = createAsyncThunk(
+  "tasks/updateTask",
+  async ({ id, parcialTask, token }) => {
+    const response = await api.update(id, parcialTask, token);
+    return response.data;
+  }
+);
+export const removeTask = createAsyncThunk(
+  "tasks/removeTask",
+  async ({ id, token }) => {
+    await api.remove(id, token);
+    return { id };
+  }
+);
 
 const initialState = {
   tasks: [],
@@ -43,10 +52,10 @@ export const tasksSlice = createSlice({
       state.tasks = action.payload;
     },
     [setTask.fulfilled]: (state, action) => {
-      state.tasks = [...state.task, action.payload];
+      state.tasks = [...state.tasks, action.payload];
     },
     [updateTask.fulfilled]: (state, action) => {
-      state.tasks = state.map((item) =>
+      state.tasks = state.tasks.map((item) =>
         item.id === action.payload.id ? action.payload : item
       );
     },

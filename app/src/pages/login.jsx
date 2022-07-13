@@ -80,7 +80,7 @@ function LogIn() {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    login(user) && navigate("/", { replace: true });
+    login(user) && navigate("/todo", { replace: true });
   };
 
   return (

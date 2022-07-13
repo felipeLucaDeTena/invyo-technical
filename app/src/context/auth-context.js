@@ -14,12 +14,13 @@ export function AuthProvider({ children }) {
   function login(user) {
     logInApi
       .set(user)
-      .then((tkn) => {
+      .then((resp) => {
+        console.log(resp);
         setAuthState({
           isAuthenticated: true,
-          token: tkn,
+          token: resp.data.token,
         });
-        localStorage.setItem("token", tkn);
+        localStorage.setItem("token", resp.data.token);
       })
       .catch((err) => setError(true));
   }
@@ -37,7 +38,7 @@ export function AuthProvider({ children }) {
         isAuthenticated: true,
         token: localStorage.getItem("token"),
       });
-  }, [authState]);
+  }, []);
 
   return (
     <AuthContext.Provider value={{ login, logout, authState, error }}>

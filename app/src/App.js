@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import NavBar from "./components/core/nav";
 import { RequireAuth } from "./components/login/require-auth";
 import useAuth from "./context/auth-context";
-
-import Data from "./pages/data";
+import DataPage from "./pages/data";
 import LogIn from "./pages/login";
-import ToDo from "./pages/todo";
+import ToDoPage from "./pages/todo";
 
 function App() {
   const { authState } = useAuth();
@@ -25,7 +25,8 @@ function App() {
           path="/todo"
           element={
             <RequireAuth>
-              <ToDo />
+              <NavBar />
+              <ToDoPage />
             </RequireAuth>
           }
         />
@@ -33,7 +34,8 @@ function App() {
           path="/data"
           element={
             <RequireAuth>
-              <Data />
+              <NavBar />
+              <DataPage />
             </RequireAuth>
           }
         />
