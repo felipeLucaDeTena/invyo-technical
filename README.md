@@ -1,3 +1,5 @@
+### Invyo Technical Test
+
 ## Table of contents
 
 - [General info](#general-info)
@@ -21,7 +23,11 @@ Project is created with:
 To run this project, install it locally using npm:
 
 ```
-$ cd ../lorem
+$ cd ../api
+$ npm install
+$ npm start
+
+$ cd ../app
 $ npm install
 $ npm start
 ```
