@@ -189,7 +189,7 @@ function Card({ item, status }) {
   const daysBetweenDates = (date1, date2) => {
     const difference = new Date(date1).getTime() - new Date(date2).getTime();
     const TotalDays = Math.ceil(difference / (1000 * 3600 * 24));
-    return Math.abs(TotalDays);
+    return TotalDays - TotalDays * 2;
   };
 
   const dueDate = daysBetweenDates(
@@ -198,6 +198,7 @@ function Card({ item, status }) {
   );
 
   const backgroundColor = () => {
+    console.log(dueDate);
     if (dueDate <= 0) {
       return "#c7c7c7";
     }
