@@ -16,7 +16,7 @@ $ npm install
 $ npm start
 
 
-# Go into the api repository
+# Go into the app repository
 $ cd ../app
 
 # Install dependencies
